@@ -23,3 +23,16 @@ export interface Test {
   status: Status;
   siteId: number;
 }
+
+export enum StatusColors {
+  ONLINE = "#1BDA9D",
+  PAUSED = "#FF8346",
+  STOPPED = "#FE4848",
+  DRAFT = "#5C5C5C",
+}
+
+export enum FormattedTypes {
+  CLASSIC = "Classic",
+  SERVER_SIDE = "Server-side",
+  MVT = "MVT",
+}

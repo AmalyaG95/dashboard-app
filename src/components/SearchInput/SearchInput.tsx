@@ -5,36 +5,42 @@ import styles from "./style.module.scss";
 import SearchSvg from "../../icons/SearchSvg";
 import useDebounce from "../../hooks/useDebounce";
 import DataContext from "../../contexts/DataContext";
+import { getSessionStorageItem } from "../../utils/storage";
 
 const SearchInput = () => {
-  const { tests, filteredTests, setFilteredTests } = useContext(DataContext);
+  const { tests, setTests, filterText, setFilterText } =
+    useContext(DataContext);
 
   const search = useDebounce((v) => {
-    if (!!v) {
-      const foundTests = tests.filter(({ name }) =>
-        name.toLowerCase().includes(v)
-      );
+    setFilterText(v);
 
-      setFilteredTests(foundTests);
+    if (!!v) {
+      const foundTests = getSessionStorageItem("tests").filter(({ name }) => {
+        console.log("name", name, v);
+
+        return name.toLowerCase().includes(v);
+      });
+      console.log("foundTests", foundTests, v);
+
+      setTests(foundTests);
     } else {
-      setFilteredTests(tests);
+      setTests(JSON.parse(sessionStorage.getItem("tests")));
     }
   }, 800);
 
   const handleFilterByName = (e) => search(e.target.value);
 
   return (
-    <label className={styles.wrapper} htmlFor="">
+    <label className={styles.wrapper} htmlFor="search">
       <SearchSvg />
       <input
+        id="search"
         className={styles.searchInput}
         type="text"
         placeholder="What test are you looking for?"
         onChange={handleFilterByName}
       />
-      <span className={styles.searchResultsNumber}>
-        {filteredTests.length} tests
-      </span>
+      <span className={styles.searchResultsNumber}>{tests.length} tests</span>
     </label>
   );
 };
