@@ -3,6 +3,12 @@
 .container {
   width: 100%;
   text-align: left;
+  min-width: 990px;
+
+  th,
+  td {
+    white-space: nowrap;
+  }
 
   thead {
     .row {
@@ -50,18 +56,8 @@
       justify-content: center;
 
       .detailsButton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-family: Montserrat, sans-serif;
         align-self: flex-end;
-        background-color: $cyan;
-        width: 95px;
-        height: 30px;
-        border-radius: 10px;
-        font-size: 12px;
-        font-weight: 600;
-        color: white;
-        line-height: 14.63px;
 
         &.draftButton {
           background-color: $darkGrey;

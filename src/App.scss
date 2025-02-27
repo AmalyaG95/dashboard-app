@@ -1,3 +1,6 @@
+@import "/src/assets/styles/fonts";
+@import "/src/assets/styles/variables";
+
 .App {
   display: flex;
   flex-direction: column;
@@ -7,9 +10,32 @@
   padding: 41px 52px 48px 48px;
 }
 
+.pageTitle {
+  font-size: 26px;
+  line-height: 31.69px;
+  font-family: MontserratExtraBold, sans-serif;
+}
+
 .backButton {
   display: flex;
   align-items: center;
   margin-top: auto;
   gap: 19px;
+  font-family: NunitoExtraBold, sans-serif;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $cyan;
+  width: 95px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  line-height: 14.63px;
+  cursor: pointer;
 }

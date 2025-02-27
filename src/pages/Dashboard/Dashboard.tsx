@@ -4,7 +4,7 @@ import SearchInput from "../../components/SearchInput/SearchInput";
 import DataTable from "../../components/DataTable/DataTable";
 import DataContext from "../../contexts/DataContext";
 import { useEffect, useState } from "react";
-import fetchTests, { TestData } from "../../utils/fetchTests/fetchTests";
+import fetchTests, { TestData } from "../../api/fetchTests/fetchTests";
 import {
   getSessionStorageItem,
   setSessionStorageItem,
@@ -39,14 +39,14 @@ const Dashboard = () => {
 
       {!!testsStorage && <SearchInput />}
 
-      <section>
+      <section className={styles.wrapper}>
         {!!tests.length && <DataTable />}
         {!!filterText && tests.length === 0 && (
           <article className={styles.noResults}>
-            <p className={styles.message}>
+            <h2 className={styles.message}>
               Your search did not match any results.
-            </p>
-            <button className={styles.resetButton} onClick={handleResetFilter}>
+            </h2>
+            <button className="button" onClick={handleResetFilter}>
               Reset
             </button>
           </article>

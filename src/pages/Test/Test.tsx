@@ -16,7 +16,7 @@ const Test = ({ title }: TestProps) => {
   return (
     <>
       <div>
-        <h1 className={styles.pageTitle}>{title}</h1>
+        <h1 className="pageTitle">{title}</h1>
         {!!test && <h4 className={styles.subtitle}> {test.name}</h4>}
       </div>
 

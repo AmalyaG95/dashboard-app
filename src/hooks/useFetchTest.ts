@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Test } from "../types";
-import getTest from "../utils/getTest/getTest";
+import getTest from "../api/getTest/getTest";
 
 const useFetchTest = () => {
   const { testId } = useParams();

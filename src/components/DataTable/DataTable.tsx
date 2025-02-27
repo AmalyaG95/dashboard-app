@@ -78,7 +78,7 @@ const DataTable = () => {
               })}
               <td className={styles.column}>
                 <Link
-                  className={cn(styles.detailsButton, {
+                  className={cn("button", styles.detailsButton, {
                     [styles.draftButton]: isDraft,
                   })}
                   to={`/${buttonText.toLowerCase()}/${id}`}

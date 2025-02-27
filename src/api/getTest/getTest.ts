@@ -2,7 +2,9 @@ import axios from "axios";
 
 const getTest = async (id: string) => {
   try {
-    const response = await axios.get(`http://localhost:3100/tests/${id}`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/tests/${id}`
+    );
     const data = response.data;
 
     return data;
