@@ -1,0 +1,35 @@
+@import "/src/assets/styles/variables";
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  font-size: 14px;
+
+  svg {
+    position: absolute;
+    left: 13px;
+    top: 15px;
+  }
+
+  .searchInput {
+    width: 100%;
+    border: 1px solid $lightGrey;
+    border-radius: 15px;
+    color: $darkGrey;
+
+    line-height: 16.41px;
+    height: 45px;
+    padding-inline: 35px 39px;
+
+    &::placeholder {
+      color: $grey;
+    }
+  }
+
+  .searchResultsNumber {
+    position: absolute;
+    right: 17px;
+    top: 16px;
+    color: $grey;
+  }
+}

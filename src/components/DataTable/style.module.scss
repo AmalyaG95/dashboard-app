@@ -1,0 +1,19 @@
+@import "/src/assets/styles/variables";
+
+.container {
+  width: 100%;
+  text-align: left;
+
+  .tableHeader {
+    text-transform: uppercase;
+    color: $darkerGrey;
+    font-size: 11px;
+    line-height: 12.89px;
+    font-weight: 500;
+    cursor: default;
+  }
+
+  .column {
+    padding: 24px 10px;
+  }
+}
