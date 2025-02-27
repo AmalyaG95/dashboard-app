@@ -12,8 +12,6 @@ const useFetchTest = () => {
     if (!!testId) {
       const fetchData = async () => {
         const testData = await getTest(testId);
-        console.log("testData", testData);
-
         setTest(testData);
       };
 

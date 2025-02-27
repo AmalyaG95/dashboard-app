@@ -30,16 +30,6 @@ const fetchTests = async (): Promise<TestData> => {
       })
     );
 
-    console.log(
-      "4444444444444",
-      dataWithSites
-        .filter(
-          (item): item is PromiseFulfilledResult<any> =>
-            item.status === "fulfilled"
-        )
-        .map((data) => data.value)
-    );
-    // Filter out rejected promises and return only fulfilled ones
     return dataWithSites
       .filter(
         (item): item is PromiseFulfilledResult<any> =>
@@ -48,7 +38,7 @@ const fetchTests = async (): Promise<TestData> => {
       .map((data) => data.value);
   } catch (e) {
     console.error("Error fetching tests:", e);
-    return []; // Return empty array on error
+    return [];
   }
 };
 

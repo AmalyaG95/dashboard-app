@@ -11,10 +11,7 @@ import getRandomRowColor from "../../utils/getRandomColor/getRandomColor";
 
 const DataTable = () => {
   const { tests, setTests } = useContext(DataContext);
-
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
-
-  console.log("5555555555555555", tests);
 
   const handleSortByHeader = (header: string) => {
     const sortedTests = tests.toSorted((a, b) => {
@@ -31,7 +28,6 @@ const DataTable = () => {
     setTests(sortedTests);
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
   };
-  console.log("tests33", tests);
 
   return (
     <table className={styles.container}>

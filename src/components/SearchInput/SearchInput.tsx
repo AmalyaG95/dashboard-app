@@ -15,13 +15,9 @@ const SearchInput = () => {
     setFilterText(v);
 
     if (!!v) {
-      const foundTests = getSessionStorageItem("tests").filter(({ name }) => {
-        console.log("name", name, v);
-
-        return name.toLowerCase().includes(v);
-      });
-      console.log("foundTests", foundTests, v);
-
+      const foundTests = getSessionStorageItem("tests").filter(({ name }) =>
+        name.toLowerCase().includes(v)
+      );
       setTests(foundTests);
     } else {
       setTests(JSON.parse(sessionStorage.getItem("tests")));
