@@ -19,10 +19,12 @@
 .backButton {
   display: flex;
   align-items: center;
+  align-self: flex-start;
   margin-top: auto;
   gap: 19px;
   font-family: NunitoExtraBold, sans-serif;
   cursor: pointer;
+  padding-right: 10px;
 }
 
 .button {

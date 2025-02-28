@@ -33,13 +33,19 @@ const DataTable = () => {
     <table className={styles.container}>
       <thead>
         <tr className={styles.row}>
-          {TABLE_HEADERS.map((header, index) => (
-            <th key={index} className={cn(styles.tableHeader, styles.column)}>
-              <span onClick={(_e) => handleSortByHeader(header.toLowerCase())}>
-                {header}
-              </span>
-            </th>
-          ))}
+          {TABLE_HEADERS.map((header, index) => {
+            const TitleElement = !!header ? "button" : "span";
+
+            return (
+              <th key={index} className={cn(styles.tableHeader, styles.column)}>
+                <TitleElement
+                  onClick={(_e) => handleSortByHeader(header.toLowerCase())}
+                >
+                  {header}
+                </TitleElement>
+              </th>
+            );
+          })}
         </tr>
       </thead>
       <tbody>

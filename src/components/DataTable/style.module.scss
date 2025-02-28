@@ -12,9 +12,24 @@
 
   thead {
     .row {
-      padding: 10px 15px;
-      padding-right: 11px;
+      padding: 0 15px;
       border-left: 4px solid $mainBg;
+
+      .tableHeader {
+        button {
+          height: 100%;
+          padding-block: 10px;
+          margin-right: 11px;
+          text-align: left;
+          text-transform: uppercase;
+          color: $grey;
+          font-size: 11px;
+          line-height: 12.89px;
+          font-weight: 500;
+          cursor: default;
+          font-family: Roboto, sans-serif;
+        }
+      }
     }
   }
 
@@ -40,15 +55,6 @@
     width: 100%;
     border-radius: 3px;
     padding: 0 11px;
-
-    .tableHeader {
-      text-transform: uppercase;
-      color: $grey;
-      font-size: 11px;
-      line-height: 12.89px;
-      font-weight: 500;
-      cursor: default;
-    }
 
     .column {
       display: flex;
